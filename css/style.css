@@ -1,1 +1,207 @@
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-header: hsl(30, 10%, 85%);
+    --color-aside: hsl(210, 40%, 90%);
+    --color-main: hsl(30, 60%, 84%);
+    --color-footer: hsl(30, 10%, 85%);
+    --padding-xxxxl: 64px;
+    --padding-xxxl: 44px;
+    --padding-xxl: 32px;
+    --padding-xl: 20px;
+    --padding-l: 16px;
+    --padding-m: 12px;
+    --padding-s: 8px;
+    --padding-xs: 4px;
+    --border-stroke-width: 5px;
+    --border-stroke-color: lightgray;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: Calibri sans-serif;
+    display: grid;
+    grid-template-areas: "header header" "aside main" "footer footer";
+    grid-auto-columns: auto 1fr;
+    grid-auto-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    grid-area: header;
+    background-color: var(--color-header);
+    padding: var(--padding-xl);
+    border-bottom: var(--border-stroke-width) solid var(--border-stroke-color);
+}
+
+h1 {
+    font-weight: lighter;
+    letter-spacing: -0.5px;
+}
+
+h3, h4 {
+    font-weight: normal;
+}
+
+aside {
+    grid-area: aside;
+    background-color: var(--color-aside);
+    padding: var(--padding-xl);
+    border-right: var(--border-stroke-width) solid var(--border-stroke-color);
+}
+
+aside section {
+    padding-bottom: var(--padding-xxxl);
+}
+
+aside ul {
+    list-style-type: square;
+    padding-left: var(--padding-m);
+}
+
+aside ul li.sel {
+    background-color: rgba(100, 100, 100, .2);
+}
+
+section.person ul {
+    list-style-type: "-";
+}
+
+section.person {
+    font-size: 90%;
+    padding: var(--padding-xl);
+    box-shadow: 0 5px 10px rgb(0 0 0 / 0.2);
+}
+
+section.person h4 {
+    font-size: 90%;
+    padding-bottom: var(--padding-l);
+}
+
+li {
+    padding: var(--padding-xs);
+}
+
+div.person li {
+    padding: var(--padding-xs);
+}
+
+aside ul li.kurs:hover {
+    background-color: rgba(100, 100, 100, .1);
+    cursor: pointer;
+}
+
+aside ul li.kurs:active {
+    background-color: rgba(100, 100, 100, .3);
+}
+
+aside h2 {
+    font-size: 125%;
+    list-style-type: square;
+    padding-left: var(--padding-m);
+    padding-top: var(--padding-xxl);
+    padding-bottom: var(--padding-xs);
+}
+
+main {
+    grid-area: main;
+    background-color: var(--color-main);
+    padding: var(--padding-xl);
+    /*border: var(--padding-xl) solid rgba(100, 100, 100, .2);*/
+}
+
+main h2 {
+    padding: var(--padding-xl);
+    padding-bottom: var(--padding-xxl);
+}
+
+main h2 div {
+    display: inline-block;
+    background-color: rgba(100, 100, 100, .2);
+    padding: var(--padding-m);
+    vertical-align: bottom;
+}
+
+h2 span#wort {
+    position: relative;
+    bottom: 2px;
+    font-size: 80%;
+    padding: var(--padding-xs);
+    background-color: rgba(100, 100, 100, .95);
+    color: var(--color-main);
+}
+
+
+main h2 span {
+    font-size: 1.8rem;
+    padding: var(--padding-m);
+}
+
+main h3 {
+    padding-top: var(--padding-xxl);
+    padding-bottom: var(--padding-xl);
+    padding-left: var(--padding-xxxl);
+}
+
+main h3 span {
+    padding: var(--padding-s);
+    background-color: rgba(100, 100, 100, .12);
+    border: 1px solid rgba(100, 100, 100, 0.18);
+}
+
+main span.tag {
+    position: relative;
+    bottom: -8px;
+    font-size: 240%;
+    color: rgb(96, 96, 96);
+}
+
+main li h4 {
+    font-weight: bold;
+    padding-bottom: var(--padding-xs);
+}
+
+main ul li {
+    list-style-type: none;
+}
+
+main li ul {
+    padding-bottom: var(--padding-xl);
+}
+
+main li li {
+    padding-left: var(--padding-xl);
+}
+
+.card {
+    font-size: 90%;
+    margin: var(--padding-xl);
+    padding: var(--padding-xl);
+    box-shadow: 0 5px 10px rgb(0 0 0 / 0.2);
+}
+
+.card + h3 {
+    margin-top: var(--padding-m);
+    margin-bottom: var(--padding-m);
+}
+
+.detail {
+    display: none;
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+    background-color: var(--color-footer);
+    padding: var(--padding-m);
+    border-top: var(--border-stroke-width) solid var(--border-stroke-color);
+}
